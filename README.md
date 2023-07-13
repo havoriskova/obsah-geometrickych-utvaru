@@ -1,0 +1,2 @@
+# obsah-geometrickych-utvaru
+ 
