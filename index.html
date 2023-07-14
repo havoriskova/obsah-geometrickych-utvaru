@@ -9,34 +9,39 @@
   </head>
   <body>
     <div class="area-calculator">
-      <form id="form-select-shape">
+      <form id="form--select-shape">
         <span>Geometrický tvar: </span>
         <!--instead of span use more semantic html-->
-        <select name="geometric-shape" id="select-shape">
-          <option value="kruh">Kruh</option>
-          <option value="ctverec">Čtverec</option>
-          <option value="obdelnik">Obdelník</option>
-          <option value="lichobeznik">Lichoběžník</option>
-          <option value="trojuhelnik">Trojúhelník</option>
+        <select name="geometric-shape" id="select--shape">
+          <option value="square">Čtverec</option>
+          <option value="circle">Kruh</option>
+          <option value="rectangle">Obdelník</option>
+          <option value="trapezoid">Lichoběžník</option>
+          <option value="triangle">Trojúhelník</option>
         </select>
         <button type="submit">Vybrat</button>
       </form>
 
-      <div class="img-container">
-        <img alt="vybraný geometrický tvar a rovnice pro výpočet jeho obsahu" />
-      </div>
+      <form id="form--area-calculator">
+        <div class="img-container">
+          <img
+            id="img--shape"
+            alt="vybraný geometrický tvar a rovnice pro výpočet jeho obsahu"
+          />
+        </div>
 
-      <span>Parametry výpočtu</span>
-      <!--instead of span use more semantic html-->
-      <div class="container-for-inputs" id="container-for-inputs">
-        <!-- innerHTML of container-for-inputs will be changing because of method within GeometricShape class-->
-        <label for="r">r</label><input type="number" id="r" />
-      </div>
-      <div>
-        <label for="vysledek">Výsledek</label>
-        <input type="number" id="vysledek" />
-        <button>Výpočítat</button>
-      </div>
+        <span>Parametry výpočtu</span>
+        <!--instead of span use more semantic html-->
+        <div class="container-for-inputs" id="container-for-inputs">
+          <!-- innerHTML of container-for-inputs will be changing because of method within GeometricShape class-->
+          <label for="r">r</label><input type="number" id="r" />
+        </div>
+        <div>
+          <label for="result">Výsledek</label>
+          <input type="number" id="result" />
+          <button type="submit">Výpočítat</button>
+        </div>
+      </form>
     </div>
     <script src="./script.js"></script>
   </body>
