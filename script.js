@@ -51,7 +51,7 @@ function createNewForm(e) {
     let inputsArr = [];
     for (let i = 0; i < measureArr.length; i++) {
         let input = 
-        `<div class='user-inputs-measurements'>
+        `<div class='container-for-input'>
         <label for=${measureArr[i]}>${measureArr[i]}</label>
         <input type="number" id=${measureArr[i]} class='user-inputs-measurements'/>
         </div>`;
@@ -63,7 +63,9 @@ function createNewForm(e) {
 
 function calculateArea(e) {
     e.preventDefault();
+    console.log(e);
     let shapeName = selectShape.value;
+    console.log(shapeName);
     let calculatedArea = eval(`${shapeName}.calculateArea()`);
     result.innerHTML = calculatedArea;
     
@@ -71,3 +73,12 @@ function calculateArea(e) {
 
 formSelectShape.addEventListener("submit", createNewForm);
 formAreaCalculator.addEventListener("submit", calculateArea);
+
+
+function init() {
+
+
+}
+
+
+init();
