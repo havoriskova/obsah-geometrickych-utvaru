@@ -63,9 +63,7 @@ function createNewForm(e) {
 
 function calculateArea(e) {
     e.preventDefault();
-    console.log(e);
     let shapeName = selectShape.value;
-    console.log(shapeName);
     let calculatedArea = eval(`${shapeName}.calculateArea()`);
     result.innerHTML = calculatedArea;
     
@@ -73,12 +71,3 @@ function calculateArea(e) {
 
 formSelectShape.addEventListener("submit", createNewForm);
 formAreaCalculator.addEventListener("submit", calculateArea);
-
-
-function init() {
-
-
-}
-
-
-init();
