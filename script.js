@@ -11,6 +11,10 @@ const result = document.querySelector("#result");
 // js-Expression-eval:  var expression = Parser.parse(formula); var result = expression.evaluate({ x: 3 });
 // js method eval()
 // converts string with formula into a real function which return result
+
+let a, b, c, r, v; // for destructuring assignment
+
+
 class GeometricShape {
     constructor(shape, measureArray, formula) {
         this.shape = shape;
@@ -21,26 +25,29 @@ class GeometricShape {
     calculateArea() {
         console.log('ok');
         let inputsArr = [...document.querySelectorAll('.user-inputs-measurements')];
-        let inputValuesArr = [];
-        let inputIdsArr = [];
+        let valuesObj = {};
 
         for (let i = 0; i < inputsArr.length; i++) {
 
             let value = inputsArr[i].value;
-            let idM = inputsArr[i].id;
-            inputValuesArr.push(value);
-            inputIdsArr.push(idM);
+            let key = inputsArr[i].id;
+            console.log(key);
+            valuesObj[key] = parseInt(value);
+            console.log(valuesObj);
         }
 
-        console.log(inputValuesArr);
-        console.log(inputIdsArr);
+       console.log(valuesObj); // --> {a: 1, b:2}
 
-      inputIdsArr.map((e, i) => { e = inputValuesArr[i]});
+       console.log(valuesObj.a); //
 
-      console.log(this.formula);
-      console.log(eval(this.formula));
-      //return eval(this.formula);
-    
+       let {a, b, c, r, v} = valuesObj;
+
+       console.log(this.formula);
+       console.log(eval(this.formula));
+       let result = eval(this.formula);
+
+      return Math.floor(result); 
+
     }
 
 }
@@ -79,11 +86,7 @@ function createNewForm(e) {
         inputsArr.push(input);
     }
     containerForInputs.innerHTML = [...inputsArr];
-
-      // for (let i = 0; i < this.measureArr.length; i++) {
-    //     `<label for=${this.measureArr[i]}>${this.measureArr[i]}</label>
-    //     <input type="number" id=${this.measureArr[i]}/>`
-    // }
+    result.value = '';
 }
 
 function calculateArea(e) {
@@ -93,8 +96,8 @@ function calculateArea(e) {
     let shapeName = selectShape.value;
     let calculatedArea = eval(`${shapeName}.calculateArea()`); //
 
-   // console.log(calculatedArea);
-   // result.value = calculatedArea;
+   console.log(calculatedArea);
+   result.value = calculatedArea;
     
 }
 
