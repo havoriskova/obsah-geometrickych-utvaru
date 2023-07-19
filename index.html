@@ -9,10 +9,10 @@
   </head>
   <body>
     <div class="area-calculator">
-      <form id="form--select-shape">
-        <span>Geometrický tvar: </span>
+      <form id="form--select-shape" class="flex--parent">
+        <h1>Geometrický tvar: </h1>
         <!--instead of span use more semantic html-->
-        <select name="geometric-shape" id="select--shape">
+        <select name="geometric-shape" id="select--shape" class="input-style">
           <option value="square">Čtverec</option>
           <option value="circle">Kruh</option>
           <option value="rectangle">Obdelník</option>
@@ -31,15 +31,17 @@
           />
         </div>
 
-        <span>Parametry výpočtu</span>
-        <!--instead of span use more semantic html-->
+        <h2>Parametry výpočtu</h2>
         <div class="container-for-inputs" id="container-for-inputs">
           <!-- innerHTML of container-for-inputs will be changing because of method within GeometricShape class-->
-          <label for="a">a</label><input type="number" id="a" class='user-inputs-measurements' />
+          <div class='user-inputs-measurements'>
+            <label for="a">a</label>
+            <input type="number" id="a" />
+          </div>
         </div>
-        <div>
-          <label for="result">Výsledek</label>
-          <input type="number" id="result" />
+        <div class="flex--parent result--container">
+          <label for="result">Výsledek:</label>
+          <span id="result" class="input-style align-text"></span>
           <button type="submit">Výpočítat</button>
         </div>
       </form>

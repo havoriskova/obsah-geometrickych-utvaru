@@ -1,0 +1,85 @@
+:root {
+    --primary-color: black;
+    --accent-color: rgb(0, 113, 138); /*podle img, jeste pouziju hue filter*/
+    --text-color: rgb(46, 46, 46);
+    --line-height: 2rem;
+    --input-width: 10rem;
+}
+
+* {
+    font-family: monospace;
+}
+
+.area-calculator {
+    margin: 2rem;
+    padding: 3rem 3rem 10rem 3rem; /*because of the absolute positioning of the result container*/
+    border: 1px solid var(--text-color);
+    border-radius: .4rem;
+    width: fit-content;
+    position: relative;
+
+}
+
+.flex--parent {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+h1 {
+    display: inline-block;
+}
+
+img {
+    padding: 3rem 0;
+    filter: hue-rotate(190deg);
+}
+
+button {
+    border: none;
+    background-color: var(--accent-color);
+    height: var(--line-height);
+    width: 7rem;
+    border-radius: .4rem;
+    cursor: pointer;
+    transition: filter ease .3s;
+    color: white;
+}
+
+button:hover {
+    filter: brightness(90%);
+}
+
+
+h2 {
+    text-decoration: underline;
+}
+
+.user-inputs-measurements {
+    margin: .3rem;
+}
+
+label {
+    font-weight: 800;
+}
+
+.input-style, input {
+    width: var(--input-width);
+    height: 1.7rem;
+    display: inline-block;
+    border: 1px black solid;
+    border-radius: .4rem;
+    padding-left: .5rem;
+    
+}
+
+.result--container {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+}
+
+.align-text {
+    display: flex;
+    align-items: center;
+}
